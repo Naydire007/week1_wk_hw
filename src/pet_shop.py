@@ -17,8 +17,17 @@ def add_or_remove_cash(pet_shop, cash_amount):
 def get_pets_sold(pets_total_sold):
     return pets_total_sold["admin"]["pets_sold"]
 
-def increase_pets_sold(pets_amount, pets_total):
+def increase_pets_sold(pets_amount, sold):
     amount = pets_amount["admin"]["pets_sold"]
-    add_pets = amount + pets_total
+    add_pets = amount + sold
     pets_amount["admin"]["pets_sold"]=add_pets
 
+# def increase_pets_sold(pets_amount, sold):
+#     pets_amount["admin"]["pets_sold"] += sold
+
+def get_stock_count(dict_pets):
+    count = 0
+    pet_number = dict_pets["pets"]
+    for pet in enumerate(pet_number):
+        count += 1
+    return count
